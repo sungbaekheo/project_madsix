@@ -97,7 +97,7 @@
           "active": false,
           "left": 154,
           "top": 242,
-          "zIndex": 365,
+          "zIndex": 1,
           "widthName": 61.8583984375,
           "widthComment": 60
         },
@@ -228,7 +228,7 @@
           "active": false,
           "left": 165,
           "top": 475,
-          "zIndex": 415,
+          "zIndex": 2,
           "widthName": 72.47802734375,
           "widthComment": 60
         },
@@ -236,7 +236,7 @@
         "id": "1ef9d319-0ad2-48ce-9a59-79b9a2334bee"
       },
       {
-        "name": "QUESTION1",
+        "name": "ANSWERS",
         "comment": "답항",
         "columns": [
           {
@@ -290,8 +290,8 @@
           "active": false,
           "left": 713,
           "top": 353,
-          "zIndex": 416,
-          "widthName": 72.57958984375,
+          "zIndex": 5,
+          "widthName": 61.66796875,
           "widthComment": 60
         },
         "visible": true,
