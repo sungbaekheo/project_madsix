@@ -36,7 +36,6 @@ public class TermProjectMainMadsix {
                         polls.startPoll();
                         int val = stmt.executeUpdate(polls.getInsertSurveyeeQuery());
                         val = stmt.executeUpdate(polls.getInsertQuestionsQuery());
-                        System.out.println("설문이 정상적으로 등록되었습니다.\n");
                         break;
                     case "s" : // 통계 메뉴 시작
                     case "S" : // 통계 메뉴 시작

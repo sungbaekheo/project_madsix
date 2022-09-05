@@ -153,13 +153,13 @@ public class TermProjectPollsMadsix {
     // 설문자 정보 입력할 쿼리
     public String getInsertSurveyeeQuery() {
         String query = "INSERT INTO surveyee (id, name) VALUES ("+id+", \""+inputName+"\")";
-        System.out.println(query);
         return query;
     }
     // 설문 내용 입력할 쿼리
     public String getInsertQuestionsQuery() {
         String query = "INSERT INTO questions (id, question1, question2, question3, question4) " +
                         "VALUES ("+id+", "+ans1+", "+ans2+", "+ans3+", "+ans4+")";
+        System.out.println("설문이 정상적으로 등록되었습니다.\n");
         return query;
     }
 

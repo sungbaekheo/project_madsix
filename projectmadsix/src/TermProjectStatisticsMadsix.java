@@ -43,7 +43,7 @@ public class TermProjectStatisticsMadsix {
             System.out.println("설문자별 통계입니다.\n");
             while (rs.next()) {
                 // Retrieve by column name
-                System.out.print("ID : " + rs.getInt("surveyee.ID"));
+                System.out.print("ID " + rs.getInt("surveyee.ID"));
                 System.out.println(" NAME : " + rs.getString("surveyee.Name"));
                 System.out.println("백화점의 입지는 접근하기에 용이한가? : " + rs.getString("question1"));
                 System.out.println("백화점의 고객응대는 만족스러운가? : " + rs.getString("question2"));
