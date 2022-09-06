@@ -6,7 +6,6 @@ public class TermProjectStatisticsMadsix {
 
     // 통계 시작하기
     public void startStatistics() {
-        System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("원하시는 통계 메뉴를 선택해주세요.\n");
         System.out.println("1. 설문자별 통계 출력");
         System.out.println("2. 문항별 통계 출력");
@@ -18,7 +17,6 @@ public class TermProjectStatisticsMadsix {
     
     // 문항 리스트
     public void questionList() {
-        System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("통계 자료를 확인할 문항을 선택해주세요.\n");
         System.out.println("1. 백화점의 입지는 접근하기에 용이한가?");
         System.out.println("2. 백화점의 고객 응대는 만족스러운가?");
@@ -45,16 +43,15 @@ public class TermProjectStatisticsMadsix {
 
         try {
             System.out.println("설문자별 통계입니다.\n");
-            System.out.println("\t\t\t\t백화점의 입지는 접근하기에 용이한가?\t\t백화점의 고객 응대는 만족스러운가?\t\t백화점의 편의시설은 잘 마련되어 있는가?\t\t백화점 내 입점 매장은 다양한가?\n\n");
             while (rs.next()) {
                 // Retrieve by column name
-                System.out.print("설문 번호 " + rs.getInt("surveyee.ID")+", ");
-                System.out.print(" 이름: " + rs.getString("surveyee.Name")+ "\t");
-                System.out.print(String.format("%-45s", rs.getString("question1")));
-                System.out.print(String.format("%-45s", rs.getString("question2")));
-                System.out.print(String.format("%-45s", rs.getString("question3")));
-                System.out.print(String.format("%-45s", rs.getString("question4")));
-                System.out.println("\n");
+                System.out.print("ID " + rs.getInt("surveyee.ID"));
+                System.out.println(" NAME : " + rs.getString("surveyee.Name"));
+                System.out.println("백화점의 입지는 접근하기에 용이한가? : " + rs.getString("question1"));
+                System.out.println("백화점의 고객응대는 만족스러운가? : " + rs.getString("question2"));
+                System.out.println("백화점의 편의시설은 잘 마련되어 있는가? : " + rs.getString("question3"));
+                System.out.println("백화점 내 입점 매장은 다양한가? : " + rs.getString("question4"));
+                System.out.println();
              }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -184,7 +181,7 @@ public class TermProjectStatisticsMadsix {
             System.out.println();
             String bar = ":";
             while (rs.next()) {
-                System.out.printf(" %s\t\t", (rs.getString("answer")).trim());
+                System.out.printf(" %-7s ", rs.getString("answer"));
                 int ans1 = rs.getInt("COUNT(ID)");
                 double percentage = (double) ans1 / total * 100;
                 for(int i = 0; i <= percentage; i++) {
@@ -192,6 +189,7 @@ public class TermProjectStatisticsMadsix {
                 }
                 System.out.println(String.format(" %.2f", percentage) + " %");
              }
+             System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,0 +1,11 @@
+INSERT INTO questions_and_answers_2 (ANSWER_KEY, QUESTION_KEY, TOTAL_KEY)
+VALUES (1, 1, 1);
+
+INSERT INTO questions_and_answers_2 (ANSWER_KEY, QUESTION_KEY, TOTAL_KEY)
+VALUES (2, 4, 2);
+
+INSERT INTO questions_and_answers_2 (ANSWER_KEY, QUESTION_KEY, TOTAL_KEY)
+VALUES (3, 3, 3);
+
+INSERT INTO questions_and_answers_2 (ANSWER_KEY, QUESTION_KEY, TOTAL_KEY)
+VALUES (4, 2, 4);
