@@ -2,6 +2,8 @@ import java.sql.*;
 
 public class TermProjectStatisticsMadsix {
 
+    int total;
+
     // 통계 시작하기
     public void startStatistics() {
         System.out.println("원하시는 통계 메뉴를 선택해주세요.\n");
@@ -151,4 +153,49 @@ public class TermProjectStatisticsMadsix {
 
         return ;
     }
+
+    // 전체 설문 인원 받는 쿼리
+    public String getTotalNumber() {
+        String query = "SELECT COUNT(ID) FROM questions";
+        return query;
+    }
+
+    // 전체 설문수 입력 쿼리
+    public void totalNumber(ResultSet rs) {
+        try {
+            System.out.println();
+            while (rs.next()) {
+                total = rs.getInt("COUNT(ID)");
+                System.out.println(total);
+            }
+             System.out.println();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // 응답 그래프 그리기
+    public void statisticsGraph(ResultSet rs) {
+
+        try {
+            System.out.println();
+            String bar = ":";
+            while (rs.next()) {
+                System.out.printf(" %-7s ", rs.getString("answer"));
+                int ans1 = rs.getInt("COUNT(ID)");
+                double percentage = (double) ans1 / total * 100;
+                for(int i = 0; i <= percentage; i++) {
+                    System.out.print("|");
+                }
+                System.out.println(String.format(" %.2f", percentage) + " %");
+             }
+             System.out.println();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }
+
+
 }
